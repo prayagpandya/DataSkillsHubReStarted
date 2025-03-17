@@ -5,7 +5,7 @@ import Marquee from '../molicules/Marquee';
 import AffordableStripHome from '../organisms/AffordableStripHome';
 import PopularBlogsComponent from '../organisms/Blogs';
 import CourseSection from '../organisms/CourseCardSection';
-import CoursePageCards from '../organisms/CoursePAgeCards';
+import CoursePageCards from '../organisms/CoursePageCards';
 import Hero from '../organisms/Hero';
 import HomeAbSection from '../organisms/HomeAbSection';
 import HomeServices from '../organisms/HomeServices';
