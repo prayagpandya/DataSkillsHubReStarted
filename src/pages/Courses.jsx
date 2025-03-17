@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CoursePageCards from '../organisms/CoursePAgeCards';
+import CoursePageCards from '../organisms/CoursePageCards';
 
 const Courses = () => {
   return (
