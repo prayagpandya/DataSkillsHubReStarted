@@ -15,13 +15,10 @@ const AboutUs = () => {
           alt='About background featuring shipping containers and cranes'
         />
         <div className='absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/40 flex flex-col items-center justify-center text-center p-4 md:p-8'>
-          <div className='w-full lg:w-2/3 p-6 md:p-8'>
+          <div className='w-full lg:w-3/4 p-6 md:p-8'>
             <h1 className='text-4xl md:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-zinc-200 to-zinc-500 tracking-tight leading-tight animate-fadeIn'>
-              Setting a tradition of excellence since 1995
+              Your Bridge to IT Excellence and Opportunity
             </h1>
-            <p className='mt-4 text-lg md:text-xl text-zinc-300 animate-fadeIn delay-1s'>
-              Building a legacy of quality and innovation at M&P Fasteners
-            </p>
           </div>
         </div>
       </div>

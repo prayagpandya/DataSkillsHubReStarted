@@ -64,7 +64,7 @@ const WorkCard = ({ stepNumber, title, description }) => {
       {/* Learn More Button (Aligned at Bottom) */}
       <div className='text-center'>
         <Link
-          to='/'
+          to='/courses'
           className='inline-block px-6 py-3 bg-gradient-to-r from-zinc-100 to-zinc-200 text-zinc-800 font-semibold rounded-lg shadow-md hover:from-zinc-800 hover:to-zinc-900 hover:text-white border border-zinc-300 hover:border-zinc-700 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-opacity-50'
           aria-label={`Learn more about ${title}`}
         >

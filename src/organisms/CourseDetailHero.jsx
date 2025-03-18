@@ -8,7 +8,6 @@ const CourseDetailedHero = ({
   title,
   subtitle,
   imageUrl,
-  startDate = '29 December 2024',
   duration = '3 Months',
   language = 'English',
   jobAssistance = 'Job Assistance',
@@ -76,7 +75,7 @@ const CourseDetailedHero = ({
           <img
             src={imageUrl}
             alt={title}
-            className='w-4/5 rounded-lg shadow-md border border-zinc-800'
+            className=' rounded-lg shadow-md border border-zinc-800'
           />
         </div>
       </div>
@@ -84,10 +83,6 @@ const CourseDetailedHero = ({
       {/* Course Details */}
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6'>
         <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 bg-white p-4 rounded-lg shadow-md text-center'>
-          <div>
-            <p className='text-sm text-zinc-600'>Date of Commencement</p>
-            <p className='text-base font-semibold text-zinc-900'>{startDate}</p>
-          </div>
           <div>
             <p className='text-sm text-zinc-600'>Duration</p>
             <p className='text-base font-semibold text-zinc-900'>{duration}</p>
@@ -97,10 +92,14 @@ const CourseDetailedHero = ({
             <p className='text-base font-semibold text-zinc-900'>{language}</p>
           </div>
           <div>
-            <p className='text-sm text-zinc-600'>Job Assistance</p>
+            <p className='text-sm text-zinc-600'>Job Guarantee</p>
             <p className='text-base font-semibold text-zinc-900'>
               {jobAssistance}
             </p>
+          </div>
+          <div>
+            <p className='text-sm text-zinc-600'>Projects Covered</p>
+            <p className='text-base font-semibold text-zinc-900'>10+</p>
           </div>
           <div>
             <p className='text-sm text-zinc-600'>Delivery Mode</p>

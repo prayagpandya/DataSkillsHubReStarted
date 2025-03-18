@@ -1,3 +1,5 @@
+import { assets } from './assets';
+
 // coursesData.js
 export const coursesData = [
   {
@@ -6,8 +8,7 @@ export const coursesData = [
       'Master the art of product and project management powered by Generative AI in this cutting-edge course. Learn to drive innovation, streamline workflows, and leverage AI tools to excel in today’s tech-driven world. With hands-on training and 100% guaranteed interviews, your dream job is within reach!',
     desc2:
       'Learn to manage products and projects efficiently using Gen AI tools for automation, insights, and decision-making.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: assets.projectManagement,
     buttonText: 'Learn More',
     about: {
       heading: 'About Product and Project Management With Generative AI',
@@ -33,8 +34,7 @@ export const coursesData = [
       'Unlock the power of data with this state-of-the-art Data Analyst course, enhanced by Generative AI. Master the skills to analyze, visualize, and interpret data, driving impactful decisions in a tech-driven world. With hands-on training and 100% guaranteed interviews, your dream career in data analytics is just a step away!',
     desc2:
       'Master data analysis skills to turn raw data into actionable insights using tools like Excel, SQL, and Power BI.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1551288049-b5f3a7a53611?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: assets.dataAnalyst,
     buttonText: 'Learn More',
     about: {
       heading: 'About Data Analysis With AI',
@@ -59,8 +59,7 @@ export const coursesData = [
       'Master the art of business analysis powered by Generative AI in this cutting-edge course. Learn to drive strategic decisions, optimize processes, and leverage AI tools to excel in today’s data-driven world. With hands-on training and 100% guaranteed interviews, your dream career in business analysis is within reach!',
     desc2:
       'Develop skills to bridge business needs and technical solutions with hands-on business analysis training.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: assets.businessAnalyst,
     buttonText: 'Learn More',
     about: {
       heading: 'About Business Analysis With AI',
@@ -86,8 +85,7 @@ export const coursesData = [
       'Master the art of data science powered by Generative AI in this cutting-edge course. Learn to drive insights, build predictive models, and leverage AI tools to excel in today’s tech-driven world. With hands-on training and 100% guaranteed interviews, your dream career in data science is within reach!',
     desc2:
       'Dive into data science and leverage Gen AI to build predictive models, automate workflows, and uncover insights.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1551288049-b5f3a7a53611?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: assets.dataScience,
     buttonText: 'Learn More',
     about: {
       heading: 'About Data Science With Gen AI',
@@ -112,8 +110,7 @@ export const coursesData = [
       'Master the art of digital marketing powered by Generative AI in this cutting-edge course. Learn to drive campaigns, optimize strategies, and leverage AI tools to excel in today’s tech-driven world. With hands-on training and 100% guaranteed interviews, your dream career in digital marketing is within reach!',
     desc2:
       'Transform your marketing career by mastering digital strategies and using Gen AI for campaigns and analytics.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: assets.digitalMarketing,
     buttonText: 'Learn More',
     about: {
       heading: 'About Digital Marketing With Gen AI',
@@ -139,8 +136,7 @@ export const coursesData = [
       'Master the art of full stack web development in this cutting-edge course. Learn to build dynamic applications, streamline development processes, and leverage modern tools to excel in today’s tech-driven world. With hands-on training and 100% guaranteed interviews, your dream career in web development is within reach!',
     desc2:
       'Become a full stack developer by learning HTML, CSS, JavaScript, Node.js, React, and database management.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+    imageUrl: assets.fullStackDev,
     buttonText: 'Learn More',
     about: {
       heading: 'About Full Stack Web Development',

@@ -9,22 +9,22 @@ const CourseSection = () => {
     {
       courseName: 'Product & Project Management with Gen AI',
       description: 'Master data-driven decision-making for global markets.',
-      backgroundImage: assets.course1BusinessAnalytics,
+      backgroundImage: assets.ProjectMAnagement,
     },
     {
       courseName: 'Data Analyst',
       description: 'Lead innovative products with AI integration.',
-      backgroundImage: assets.ProjectMAnagement,
+      backgroundImage: assets.dataAnalyst,
     },
     {
       courseName: 'Business Analyst',
       description: 'Build end-to-end web solutions for top industries.',
-      backgroundImage: assets.fullStackDev,
+      backgroundImage: assets.businessAnalyst,
     },
     {
       courseName: 'Data Science with Gen AI',
       description: 'Unleash the power of AI and data science.',
-      backgroundImage: assets.GenAi,
+      backgroundImage: assets.dataScience,
     },
     {
       courseName: 'Digital Marketing with AI',

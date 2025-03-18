@@ -16,6 +16,19 @@ import cmpn15 from '../assets/Images/company/Square-Logo.webp';
 import cmpn16 from '../assets/Images/company/Stripe_Logo,_revised_2016.svg.webp';
 import cmpn17 from '../assets/Images/company/Tata_Consultancy_Services_Logo.svg.webp';
 import cmpn18 from '../assets/Images/company/Walmart_logo.svg.webp';
+// import businessAnalyst from '../assets/Images/Services/'
+import androidDev from '../assets/Images/Services/android.webp';
+import businessAnalyst from '../assets/Images/Services/businessAnalyst.webp';
+import dataAnalyst from '../assets/Images/Services/Data Analyst.webp';
+import dataScience from '../assets/Images/Services/Data Science and Gen AI.webp';
+import digitalMarketing from '../assets/Images/Services/Digital Marketing.webp';
+import invoice from '../assets/Images/Services/invoice-bill-paid-payment-financial-account-concept.webp';
+import jobExploration from '../assets/Images/Services/Job Exploration.webp';
+import projectManagement from '../assets/Images/Services/Project Management.webp';
+import softwareDev from '../assets/Images/Services/Software Development.webp';
+import fullStackDev from '../assets/Images/Services/softwareDevelopement.webp';
+import upSkill from '../assets/Images/Services/up skills.webp';
+import webDev from '../assets/Images/Services/Webdev.webp';
 import courseDetailedImg from '../assets/Images/aboutDetailed.webp';
 import b1 from '../assets/Images/b1.webp';
 import b2 from '../assets/Images/b2.webp';
@@ -26,7 +39,6 @@ import canada from '../assets/Images/canada.webp';
 import course1 from '../assets/Images/Course1.webp';
 import DigitalMarketing from '../assets/Images/DigitalMarketing.webp';
 import logo from '../assets/Images/dsh lgo.png';
-import fullStackDev from '../assets/Images/FullstackDev.webp';
 import GenAi from '../assets/Images/GenAi.webp';
 import ProjectMAnagement from '../assets/Images/Projectmanagement.webp';
 import uiux from '../assets/Images/UiUx.webp';
@@ -34,12 +46,14 @@ import upskillimg from '../assets/Images/upskill.jpg';
 import us from '../assets/Images/usFlag.webp';
 import homeAboutVideo from '../assets/videos/about.webm';
 import homeHeroVideo from '../assets/videos/bgvid.webm';
+import upskillService from '../assets/videos/UpskillService.webm';
 
 export const assets = {
   logo,
   aboutBg,
   courseDetailedImg,
   homeHeroVideo,
+  upskillService,
   course1,
   upskillimg,
   homeAboutVideo,
@@ -72,4 +86,15 @@ export const assets = {
   cmpn16,
   cmpn17,
   cmpn18,
+  dataAnalyst,
+  dataScience,
+  digitalMarketing,
+  projectManagement,
+  businessAnalyst,
+  jobExploration,
+  upSkill,
+  softwareDev,
+  androidDev,
+  invoice,
+  webDev,
 };

@@ -18,7 +18,7 @@ const CourseAboutSection = ({ info }) => {
   const stats = [
     { value: '500+', label: 'Hiring Partners' },
     { value: '1,000+', label: 'Career Transitions' },
-    { value: '6 LPA', label: 'Highest Package' },
+    { value: '90k-100k USD', label: 'Average Package' },
   ];
 
   return (

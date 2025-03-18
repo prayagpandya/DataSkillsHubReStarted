@@ -1,3 +1,4 @@
+/* eslint-disable no-irregular-whitespace */
 import {
   FaFacebook,
   FaTwitter,
@@ -111,7 +112,6 @@ const FooterComponent = () => {
             </ul>
           </div>
 
-          {/* Get in Touch */}
           <div className='space-y-6'>
             <h4 className='text-xl font-semibold text-zinc-100'>
               Get in Touch
@@ -129,15 +129,18 @@ const FooterComponent = () => {
               </li>
               <li className='flex items-center gap-3'>
                 <span className='text-zinc-400 text-base flex gap-4'>
-                  <Phone /> +1 (555) 123-4567
+                  <Phone /> +1 (551) 226 6170
                 </span>
               </li>
               <li className='space-y-4 gap-3'>
                 <span className='text-zinc-400 text-base flex gap-4'>
-                  <MapPin /> 123 Data Street, Tech City, USA
+                  <MapPin />
+                  221 W 10th Street 4th Floors, Wilmington, DE 19801, United
+                  States
                 </span>
                 <span className='text-zinc-400 text-base flex gap-4'>
-                  <MapPin /> 123 Data Street, Tech City, USA
+                  <MapPin /> BHIVE, Mahalakshmi Chambers, 29, MG Rd,
+                  Bengaluru 560001, India
                 </span>
               </li>
             </ul>

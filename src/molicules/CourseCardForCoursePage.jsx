@@ -18,7 +18,7 @@ const CourseCardForCoursePage = ({
       </div>
 
       {/* Course Image */}
-      <div className='w-full h-48 overflow-hidden rounded-t-2xl'>
+      <div className='w-full h-80 overflow-hidden rounded-t-2xl'>
         <img
           src={imageUrl}
           alt={courseName}
@@ -27,9 +27,9 @@ const CourseCardForCoursePage = ({
       </div>
 
       {/* Content */}
-      <div className='flex flex-col flex-1 p-6'>
+      <div className='flex flex-col flex-1 px-6 py-4'>
         {/* Title and Description Container with Fixed Growth */}
-        <div className='flex flex-col flex-1 space-y-4'>
+        <div className='flex flex-col flex-1 space-y-2'>
           {/* Course Title */}
           <h3 className='text-2xl font-semibold font-inter text-gray-900 tracking-tight'>
             {courseName}

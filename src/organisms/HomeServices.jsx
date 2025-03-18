@@ -22,37 +22,37 @@ const HomeServices = () => {
             planName='Upskill Course'
             description='Master in-demand skills for your dream job.'
             buttonText='Explore Now'
-            backgroundImage={assets.upskillimg}
+            backgroundImage={assets.upSkill}
           />
           <ServiceCard
             planName='Job Exploration'
             description='Discover opportunities in the US & Canada.'
             buttonText='Explore Now'
-            backgroundImage={assets.upskillimg}
+            backgroundImage={assets.jobExploration}
           />
           <ServiceCard
-            planName='Resume Building'
-            description='Craft a standout resume that gets noticed.'
+            planName='Invoice & Billing Management Software'
+            description='Manage invoices and billing efficiently with our software.'
             buttonText='Explore Now'
-            backgroundImage={assets.upskillimg}
+            backgroundImage={assets.invoice}
           />
           <ServiceCard
-            planName='Cover Letter Writing'
-            description='Write compelling letters that open doors.'
+            planName='Mobile App Development'
+            description='Build mobile apps for android and iOS.'
             buttonText='Explore Now'
-            backgroundImage={assets.upskillimg}
+            backgroundImage={assets.androidDev}
           />
           <ServiceCard
-            planName='Resume Marketing'
-            description='Get your resume in front of top employers.'
+            planName='Web Development'
+            description='Build websites and web applications with our expertise.'
             buttonText='Explore Now'
-            backgroundImage={assets.upskillimg}
+            backgroundImage={assets.webDev}
           />
           <ServiceCard
             planName='Software Development'
             description='Build skills for high-paying tech roles.'
             buttonText='Explore Now'
-            backgroundImage={assets.upskillimg}
+            backgroundImage={assets.softwareDev}
           />
         </div>
       </div>
