@@ -6,24 +6,24 @@ import JobFilters from '../molicules/JobFilters';
 const JobsSection = () => {
   const initialJobs = [
     {
+      id: 1,
       title: 'Full Stack Developer',
       company: 'Data Skills Hub',
       date: '2024-11-23',
       location: 'Rajkot, Gujarat',
       experience: '0-2 yrs',
-      vacancies: '100',
-      applied: '9',
+      jobType: 'Full Time',
       roles: ['Full Stack Developer'],
       salary: '₹100000 - ₹300000',
     },
     {
+      id: 2,
       title: 'Frontend Developer',
       company: 'Tech Innovate',
       date: '2024-11-20',
       location: 'Mumbai, Maharashtra',
       experience: '1-3 yrs',
-      vacancies: '50',
-      applied: '15',
+      jobType: 'Full Time',
       roles: ['Frontend Developer'],
       salary: '₹300000 - ₹500000+',
     },
@@ -50,7 +50,7 @@ const JobsSection = () => {
   };
 
   return (
-    <section className='p-6 lg:p-10 bg-gray-100 min-h-screen max-w-7xl mx-auto'>
+    <section className='p-6 lg:p-10  min-h-screen max-w-7xl mx-auto'>
       <div className='flex flex-col lg:flex-row gap-8'>
         <JobFilters onFilterChange={handleFilterChange} />
         <div className='flex-1'>

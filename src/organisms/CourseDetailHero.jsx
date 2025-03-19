@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import Heading from '../atoms/TypoGraphy/Heading';
 // import { assets } from '../utils/assets';
+import Modal from './Modal';
 
 const CourseDetailedHero = ({
   title,
@@ -13,13 +14,25 @@ const CourseDetailedHero = ({
   jobAssistance = 'Job Assistance',
   deliveryMode = 'Live',
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalSource, setModalSource] = useState('');
+
+  const openModal = (source) => {
+    setModalSource(source);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalSource('');
+  };
+
   return (
     <section className='py-10'>
       {/* Content Container */}
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8'>
         {/* Left Side: Text and Buttons */}
         <div className='flex-1'>
-          {/* Breadcrumbs */}
           <nav className='text-sm text-zinc-600 mb-4'>
             <Link
               to='/'
@@ -33,7 +46,7 @@ const CourseDetailedHero = ({
               className='hover:text-zinc-900 transition-colors duration-200'
             >
               Courses
-            </Link>{' '}
+            </Link>
             &gt; <span className='text-zinc-900'>{title}</span>
           </nav>
 
@@ -54,14 +67,14 @@ const CourseDetailedHero = ({
           {/* Buttons */}
           <div className='flex flex-col sm:flex-row gap-3'>
             <Link
-              to='/inquire'
+              onClick={() => openModal(`Booking Form`)}
               className='px-8 py-3 hover:bg-zinc-200 hover:text-zinc-800 hover:border-zinc-800 cursor-pointer font-medium rounded-md bg-zinc-800 text-zinc-200 border border-zinc-200 transition-colors duration-200 flex items-center gap-2'
               aria-label='Inquire now'
             >
               Book Free Demo
             </Link>
             <Link
-              to='/brochure'
+              onClick={() => openModal(`Brochure for`)}
               className='px-8 py-3 hover:bg-zinc-200 hover:text-zinc-800 hover:border-zinc-800 cursor-pointer font-medium rounded-md bg-zinc-800 text-zinc-200 border border-zinc-200 transition-colors duration-200 flex items-center gap-2'
               aria-label='Download brochure'
             >
@@ -109,6 +122,13 @@ const CourseDetailedHero = ({
           </div>
         </div>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        source={modalSource}
+        context={title}
+        isJobPage={false}
+      />
     </section>
   );
 };

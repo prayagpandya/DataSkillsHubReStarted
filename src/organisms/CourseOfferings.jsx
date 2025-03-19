@@ -19,7 +19,7 @@ const CourseOfferingsSection = () => {
     { icon: FaClipboardList, text: 'Industry Relevant Project' },
     { icon: FaUserTie, text: 'Interview Preparation' },
     { icon: FaCertificate, text: 'Certificate' },
-    { icon: FaStamp, text: 'Job Assistance' },
+    { icon: FaStamp, text: 'Job Guarantee' },
   ];
 
   return (

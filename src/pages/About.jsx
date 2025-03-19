@@ -1,28 +1,22 @@
+/* eslint-disable no-irregular-whitespace */
 import React from 'react';
 import { FaUserCircle, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 import Heading from '../atoms/TypoGraphy/Heading';
+import CommonHero from '../molicules/CommonHero';
+import CustomizedTimeline from '../molicules/Timeline';
+import ITCompanyTimeline from '../molicules/Timeline';
+import DataSkillsHubTimeline from '../molicules/Timeline';
 import { assets } from '../utils/assets';
 
 const AboutUs = () => {
   return (
     <div className='scroll-smooth  text-zinc-800  min-h-screen'>
       {/* Hero Section */}
-      <div className='relative max-h-[70vh] h-screen overflow-hidden'>
-        <img
-          src={assets.aboutBg}
-          className='w-full h-full object-cover'
-          alt='About background featuring shipping containers and cranes'
-        />
-        <div className='absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/40 flex flex-col items-center justify-center text-center p-4 md:p-8'>
-          <div className='w-full lg:w-3/4 p-6 md:p-8'>
-            <h1 className='text-4xl md:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-b from-zinc-200 to-zinc-500 tracking-tight leading-tight animate-fadeIn'>
-              Your Bridge to IT Excellence and Opportunity
-            </h1>
-          </div>
-        </div>
-      </div>
-
+      <CommonHero
+        title={'Welcome to Data Skills Hub'}
+        description={'Your Bridge to IT Excellence and Opportunities'}
+      />
       {/* About Ricky Export */}
       <div id='about' className='max-w-7xl mx-auto px-4 py-16 -mt-10'>
         <Heading title={'About Us'} pos={'center'} />
@@ -70,50 +64,48 @@ const AboutUs = () => {
       </div>
 
       {/* Mission, Vision, Purpose */}
-      {/* <div className='max-w-7xl mx-auto px-4 py-16 -mt-16'>
-        <Heading title={'Our Values'} pos={'center'} />
+      <div className='max-w-7xl mx-auto px-4 py-16 -mt-16'>
         <div className='flex flex-col md:flex-row gap-8 justify-around'>
           <div className='flex-1 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300'>
-            <FaUserCircle className='text-6xl text-zinc-800  mx-auto mb-4' />
-            <h2 className='text-2xl font-semibold text-zinc-800  text-center mb-2'>
-              Our Mission
+            <FaUserCircle className='text-6xl text-zinc-800 mx-auto mb-4' />
+            <h2 className='text-2xl font-semibold text-zinc-800 text-center mb-2'>
+              Our Vision
             </h2>
-            <p className='text-sm md:text-base text-zinc-800  text-center'>
-              To deliver high-quality engineered products across diverse
-              industries by leveraging advanced manufacturing techniques,
-              innovation, and a commitment to excellence. We aim to build
-              lasting relationships with our customers through integrity,
-              reliability, and unmatched service.
+            <p className='text-sm md:text-base text-zinc-800 text-justify'>
+              To be a global leader in IT upskilling and staffing, bridging the
+              gap between talent and opportunity with innovation and excellence,
+              enabling individuals and businesses to thrive in a tech-driven
+              world.
             </p>
           </div>
+
           <div className='flex-1 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300'>
-            <FaUserCircle className='text-6xl text-zinc-800  mx-auto mb-4' />
-            <h2 className='text-2xl font-semibold text-zinc-800  text-center mb-2'>
+            <FaUserCircle className='text-6xl text-zinc-800 mx-auto mb-4' />
+            <h2 className='text-2xl font-semibold text-zinc-800 text-center mb-2'>
               Our Mission
             </h2>
-            <p className='text-sm md:text-base text-zinc-800  text-center'>
-              To deliver high-quality engineered products across diverse
-              industries by leveraging advanced manufacturing techniques,
-              innovation, and a commitment to excellence. We aim to build
-              lasting relationships with our customers through integrity,
-              reliability, and unmatched service.
+            <p className='text-sm md:text-base text-zinc-800 text-justify'>
+              At Data Skills Hub, we empower professionals through cutting-edge
+              IT upskilling programs and strategic staffing. We connect talent
+              with opportunities, fostering career growth and business success
+              through high-quality training and placements.
             </p>
           </div>
+
           <div className='flex-1 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300'>
-            <FaUserCircle className='text-6xl text-zinc-800  mx-auto mb-4' />
-            <h2 className='text-2xl font-semibold text-zinc-800  text-center mb-2'>
-              Our Mission
+            <FaUserCircle className='text-6xl text-zinc-800 mx-auto mb-4' />
+            <h2 className='text-2xl font-semibold text-zinc-800 text-center mb-2'>
+              Our Values
             </h2>
-            <p className='text-sm md:text-base text-zinc-800  text-center'>
-              To deliver high-quality engineered products across diverse
-              industries by leveraging advanced manufacturing techniques,
-              innovation, and a commitment to excellence. We aim to build
-              lasting relationships with our customers through integrity,
-              reliability, and unmatched service.
+            <p className='text-sm md:text-base text-zinc-800 text-justify'>
+              We stand for excellence, innovation, and empowerment. Our approach
+              integrates integrity, collaboration, and inclusivity to build a
+              transparent, diverse, and future-ready tech community.
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
+      <DataSkillsHubTimeline />
     </div>
   );
 };

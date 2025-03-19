@@ -11,6 +11,7 @@ import AboutUs from './pages/About';
 import CourseDetailedPage from './pages/CourseDetailedPage';
 import Courses from './pages/Courses';
 import Home from './pages/Home';
+import JobInfoPage from './pages/JobInfoPage';
 import Jobs from './pages/Jobs';
 import Service from './pages/Service';
 import MainLayout from './utils/MainLayout';
@@ -37,6 +38,7 @@ const App = () => {
           <Route path='/about' element={<AboutUs />} />
           <Route path='/service' element={<Service />} />
           <Route path='/jobs' element={<Jobs />} />
+          <Route path='/jobs/:id' element={<JobInfoPage />} />
           <Route path='/courses/:courseName' element={<CourseDetailedPage />} />
         </Route>
       </Routes>

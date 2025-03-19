@@ -2,21 +2,29 @@ import React from 'react';
 
 const HeroBanner = () => {
   return (
-    <div
-      className='relative bg-zinc-800 text-zinc-200 font-open-sans h-[40vh] flex items-center justify-center bg-cover bg-center'
+    <section
+      className='jobs-hero bg-white text-center'
       style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80')",
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundBlendMode: 'multiply',
+        height: '30vh', // Compact yet effective
+        display: 'flex',
+        alignItems: 'center',
       }}
     >
-      <div className='absolute inset-0 bg-black/50 '></div>
-
-      <div className='relative z-10'>
-        <h3 className='text-3xl font-semibold text-center'>
-          From Skills to Solutions, We’ve Got You Covered
-        </h3>
+      <div className='container mx-auto px-6 flex flex-col justify-center items-center'>
+        <h1 className='text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-3 leading-tight tracking-tight drop-shadow-xl'>
+          Transforming Your Vision into Reality with Our Expert Services
+        </h1>
+        <p className='text-sm sm:text-base lg:text-md text-white max-w-xl mx-auto font-normal opacity-90 leading-relaxed'>
+          We provide top-notch solutions tailored to your needs, combining
+          innovation, expertise, and dedication. Let’s build something great
+          together.
+        </p>
       </div>
-    </div>
+    </section>
   );
 };
 

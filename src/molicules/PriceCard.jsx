@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+
+import Modal from '../organisms/Modal';
 
 const PricingCard = ({
   plan = 'Basic',
+  courseName,
   price = 15,
-  // billingCycle = 'per month',
   billed = 'billed annually',
   features = [],
   buttonText = 'Get Started',
-  buttonLink = '/billing',
   highlighted = false,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalSource, setModalSource] = useState('');
+
+  const openModal = (source) => {
+    setModalSource(source);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalSource('');
+  };
+
   return (
     <div
       className={`rounded-3xl p-8 border border-zinc-200 transition-all duration-300 ${
@@ -38,7 +51,6 @@ const PricingCard = ({
               <span className='text-4xl font-bold text-zinc-900 mr-2'>
                 ${price}
               </span>
-              {/* <span className='text-base'>{billingCycle}</span> */}
             </div>
             <div className='text-sm text-zinc-400'>{billed}</div>
           </div>
@@ -58,19 +70,25 @@ const PricingCard = ({
         </ul>
 
         {/* Button */}
-        <Link
-          to={buttonLink}
+        <button
+          onClick={() => openModal('Inquiry for')}
           className={`w-full text-center py-4 px-6 rounded-xl font-semibold text-base transition-all duration-300 ${
             highlighted
               ? 'bg-zinc-900 text-white hover:bg-zinc-800 hover:shadow-xl'
               : 'bg-zinc-100 text-zinc-900 hover:bg-zinc-200'
           }`}
-          target='_blank'
           aria-label={`Choose ${plan} plan`}
         >
           {buttonText}
-        </Link>
+        </button>
       </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        source={modalSource}
+        context={`${plan} plan of ${courseName}`} // Pass the plan as the context
+        isJobPage={false}
+      />
     </div>
   );
 };

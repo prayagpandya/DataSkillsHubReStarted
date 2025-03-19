@@ -9,43 +9,38 @@ const ServicesSections = () => {
     {
       title: 'Upskill Course',
       description:
-        'Elevate your tech career with Data Skills Hub’s cutting-edge upskilling courses, tailored to today’s most in-demand fields: Project & Product Management, Data Analyst, Business Analyst, Full Stack Development, Digital Marketing, and Data Science. Whether you’re mastering Agile leadership, uncovering insights with SQL and Tableau, bridging business and tech as a Business Analyst, coding end-to-end solutions, driving online success through digital strategies, or decoding complex data with Python and machine learning, our hands-on programs deliver practical skills and industry know-how. Designed for beginners and professionals alike, these courses empower you to stay ahead in the fast-paced IT world and unlock limitless career opportunities.',
+        'Boost your tech career with Data Skills Hub’s top-tier upskilling courses, designed for in-demand skills like Project Management, Data Analyst training, Business Analyst certification, Full Stack Development, Digital Marketing, and Data Science. Master Agile methodologies, SQL, Tableau, Python, and machine learning through hands-on programs tailored for beginners and seasoned professionals. Our cutting-edge IT training empowers you to excel in the fast-evolving tech industry, unlocking high-paying career opportunities across the US and Canada with practical, job-ready expertise.',
       videoUrl: assets.upskillService,
     },
     {
       title: 'Job Exploration',
       description:
-        'Embark on your next career adventure with Data Skills Hub’s Job Exploration service, designed to connect you with exciting opportunities across the US and Canada. We take the guesswork out of job hunting by matching your skills—whether in IT, data analysis, development, or digital marketing—with top-tier employers in North America’s thriving tech markets. With personalized guidance, access to exclusive job listings, and insights into industry trends, we empower you to explore, apply, and secure roles that align with your ambitions, opening doors to a world of professional growth and success.',
-      videoUrl:
-        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+        'Launch your tech career with Data Skills Hub’s Job Exploration service, connecting you to top tech jobs in the US and Canada. Specializing in IT job opportunities, data analyst roles, software development positions, and digital marketing careers, we match your skills with leading North American employers. Enjoy personalized career guidance, exclusive job listings, and industry insights to secure high-demand tech roles. Explore rewarding job opportunities and achieve professional success with our expert job placement support.',
+      videoUrl: assets.jobSearchService,
     },
     {
-      title: 'Resume Building',
+      title: 'Invoicing & Billing Management Software',
       description:
-        'Stand out in the competitive tech job market with Data Skills Hub’s Resume Building service, crafted to showcase your skills and experience with impact. Our expert team works with you to create a polished, professional resume tailored to your career goals—whether you’re a data analyst, developer, or project manager. We highlight your strengths, optimize keywords for applicant tracking systems, and ensure your accomplishments shine, giving you the edge to impress employers in the US, Canada, and beyond. Transform your resume into a powerful tool that opens doors to your dream IT career!',
-      videoUrl:
-        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+        'Streamline your business with Data Skills Hub’s Invoicing & Billing Management Software, a powerful tool for small businesses and freelancers in the US and Canada. Optimize financial workflows with our user-friendly invoicing software, designed for efficient billing, payment tracking, and expense management. Boost productivity and accuracy with automated invoicing solutions, tailored to meet the needs of tech startups, consultants, and service providers. Discover the best billing software to elevate your business operations today.',
+      videoUrl: assets.billingService,
     },
     {
-      title: 'Cover Letter Writing',
+      title: 'Application Development',
       description:
-        'Make a lasting first impression with Data Skills Hub’s Cover Letter Writing service, designed to complement your resume and win over employers. Our experts craft personalized, compelling cover letters that highlight your unique skills, passion, and fit for roles in IT, data science, digital marketing, and more. Tailored to specific job opportunities in the US and Canada, we ensure your story stands out, showcasing why you’re the perfect candidate. Let us help you turn a simple letter into a powerful pitch that opens the door to your next big career move!',
-      videoUrl:
-        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+        'Transform your ideas into reality with Data Skills Hub’s Application Development services, offering custom mobile app development and software solutions across the US and Canada. Our expert developers specialize in iOS app development, Android app creation, and cross-platform apps using cutting-edge tools like Swift, Kotlin, and React Native. Whether you’re a startup or enterprise, we deliver scalable, user-friendly applications optimized for performance. Hire top app developers to build innovative solutions and grow your business.',
+      videoUrl: assets.androidService,
     },
     {
-      title: 'Resume Marketing',
+      title: 'Web Development',
       description:
-        'Get your resume in front of top employers with Data Skills Hub’s Resume Marketing service, your fast track to landing interviews with leading companies in the US and Canada. We don’t just polish your resume—we strategically promote it to our network of industry partners and recruiters in high-demand tech fields like data analysis, full stack development, and digital marketing. With personalized marketing strategies and insider access to job opportunities, we amplify your visibility, ensuring your skills catch the eye of decision-makers and propel you toward your dream IT career.',
-      videoUrl:
-        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+        'Elevate your online presence with Data Skills Hub’s Web Development services, providing custom website design and development for businesses in the US and Canada. Our skilled web developers craft responsive, SEO-friendly websites using modern technologies like JavaScript, React, and WordPress. From e-commerce platforms to corporate sites, we deliver fast, secure, and visually stunning web solutions. Partner with our expert web development team to boost your brand and drive traffic with professional website creation.',
+      videoUrl: assets.webService,
     },
     {
       title: 'Software Development',
       description:
-        'Bring your ideas to life with Data Skills Hub’s Software Development service, where innovation meets technical expertise. Our skilled developers deliver custom solutions—from robust web applications to scalable mobile platforms—tailored to your business needs. Whether you’re a startup looking to launch a product or an enterprise seeking to optimize operations, we leverage cutting-edge technologies like Python, JavaScript, and cloud platforms to create reliable, user-friendly software. Partner with us to transform your vision into reality and stay ahead in the ever-evolving tech landscape!',
-      videoUrl:
-        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80',
+        'Power your business with Data Skills Hub’s Software Development services, offering bespoke software solutions in the US and Canada. Our experienced developers build scalable web applications, enterprise software, and mobile platforms using Python, JavaScript, and cloud technologies. Ideal for startups and established companies, our custom software development services enhance efficiency and innovation. Collaborate with our software development experts to create reliable, cutting-edge solutions tailored to your unique needs.',
+      videoUrl: assets.softwareService,
     },
   ];
 
@@ -55,7 +50,7 @@ const ServicesSections = () => {
         <h2 className='text-4xl font-bold text-center text-zinc-800 mb-12'>
           Our Services
         </h2>
-        <div className='space-y-12'>
+        <div>
           {services.map((service, index) => (
             <ServiceSection
               key={index}

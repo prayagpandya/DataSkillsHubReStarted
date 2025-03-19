@@ -46,7 +46,12 @@ import upskillimg from '../assets/Images/upskill.jpg';
 import us from '../assets/Images/usFlag.webp';
 import homeAboutVideo from '../assets/videos/about.webm';
 import homeHeroVideo from '../assets/videos/bgvid.webm';
-import upskillService from '../assets/videos/UpskillService.webm';
+import billingService from '../assets/videos/invoice.webm';
+import androidService from '../assets/videos/iosView.webm';
+import jobSearchService from '../assets/videos/jobsearch.webm';
+import softwareService from '../assets/videos/software.webm';
+import upskillService from '../assets/videos/upskill.webm';
+import webService from '../assets/videos/webView.webm';
 
 export const assets = {
   logo,
@@ -97,4 +102,9 @@ export const assets = {
   androidDev,
   invoice,
   webDev,
+  webService,
+  androidService,
+  softwareService,
+  billingService,
+  jobSearchService,
 };

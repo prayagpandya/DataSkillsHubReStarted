@@ -15,10 +15,10 @@ const JobsHero = () => {
       }}
     >
       <div className='container mx-auto px-6 flex flex-col justify-center items-center'>
-        <h1 className='text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-3 leading-tight tracking-tight drop-shadow-xl'>
+        <h1 className='text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-3 leading-tight tracking-tight drop-shadow-xl'>
           Launch Your Dream Career
         </h1>
-        <p className='text-sm sm:text-base lg:text-lg text-white max-w-xl mx-auto font-normal opacity-90 leading-relaxed'>
+        <p className='text-sm sm:text-base lg:text-md text-white max-w-xl mx-auto font-normal opacity-90 leading-relaxed'>
           Discover opportunities that align with your skills and shape
           tomorrow’s world.
         </p>

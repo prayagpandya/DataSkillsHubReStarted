@@ -1,24 +1,43 @@
+import { Clock, LaptopMinimalCheck, MapPin } from 'lucide-react';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import Modal from '../organisms/Modal'; // Adjust the import path as needed
 
 const JobCard = ({ job }) => {
+  const navigate = useNavigate();
   const {
     title = 'Unknown Job',
     company = 'Unknown Company',
     date = 'N/A',
     location = 'Unknown Location',
     experience = 'N/A',
-    vacancies = 'N/A',
-    applied = 'N/A',
+    jobType = 'N/A',
     logo = 'https://via.placeholder.com/40x40', // Default fallback
+    id, // Ensure the job ID is available for navigation
   } = job || {};
 
   const [imageSrc, setImageSrc] = useState(logo); // Manage image source with state
   const fallbackImage = 'https://via.placeholder.com/40x40'; // Define fallback explicitly
 
+  // Modal state
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalSource, setModalSource] = useState('');
+
   const handleImageError = (e) => {
     if (e.target.src !== fallbackImage) {
       setImageSrc(fallbackImage);
     }
+  };
+
+  const openModal = (source) => {
+    setModalSource(source);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setModalSource('');
   };
 
   return (
@@ -39,22 +58,51 @@ const JobCard = ({ job }) => {
       </div>
 
       <div className='space-y-2 text-sm'>
-        <p className='text-green-600 flex items-center'>
-          <span className='mr-1'>📍</span> {location}
+        <p className='flex items-center'>
+          <span className='mr-1 scale-75'>
+            <MapPin />
+          </span>{' '}
+          {location}
         </p>
-        <p className='text-gray-600'>Experience: {experience}</p>
-        <p className='text-gray-600'>Vacancies: {vacancies}</p>
-        <p className='text-gray-600'>Applied: {applied}</p>
+        <p className='text-gray-600 flex items-center'>
+          <span className='scale-75'>
+            <Clock />
+          </span>
+          Experience: {experience}
+        </p>
+        <p className='text-gray-600 flex items-center'>
+          <span className='scale-75'>
+            <LaptopMinimalCheck className='text-lg' />
+          </span>
+          JobType: {jobType}
+        </p>
       </div>
 
       <div className='flex justify-between items-center mt-6'>
-        <button className='px-4 py-2 bg-zinc-200 text-zinc-800 font-semibold rounded-md hover:bg-zinc-300 transition-colors duration-200'>
-          Apply Now
+        <button
+          onClick={() => openModal('Applying for Job')}
+          className='px-4 py-2 bg-zinc-900 text-zinc-200 font-semibold rounded-md hover:bg-zinc-700 transition-colors duration-200'
+          aria-label={`Quick apply for ${title} at ${company}`}
+        >
+          Quick Apply
         </button>
-        <button className='px-4 py-2 border border-zinc-200 text-zinc-800 bg-transparent rounded-md hover:bg-zinc-100 transition-colors duration-200'>
+        <button
+          onClick={() => navigate(`/jobs/${id}`)}
+          className='px-4 py-2 border border-zinc-200 text-zinc-800 bg-transparent rounded-md hover:bg-zinc-100 transition-colors duration-200'
+          aria-label={`View more details for ${title} at ${company}`}
+        >
           More Details
         </button>
       </div>
+
+      {/* Modal */}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={closeModal}
+        source={modalSource}
+        context={`${title} at ${company}`} // Pass the job title and company as context
+        isJobPage={true} // Enable job-specific fields (Resume, Cover Letter)
+      />
     </div>
   );
 };
