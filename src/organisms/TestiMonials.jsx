@@ -11,7 +11,6 @@ import Heading from '../atoms/TypoGraphy/Heading';
 import Paragraph from '../atoms/TypoGraphy/Paragraph';
 
 const TestimonialComponent = () => {
-  // Updated testimonial data with all provided reviews
   const testimonials = [
     {
       id: 1,
@@ -136,96 +135,99 @@ const TestimonialComponent = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isMobile = window.innerWidth < 768; // Simple mobile detection (can be improved with useMediaQuery)
 
-  // Auto-slide every 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex(
-        (prevIndex) => (prevIndex + 1) % Math.ceil(testimonials.length / 2)
+      setCurrentIndex((prevIndex) =>
+        isMobile
+          ? (prevIndex + 1) % testimonials.length
+          : (prevIndex + 1) % Math.ceil(testimonials.length / 2)
       );
     }, 5000);
     return () => clearInterval(interval);
-  }, [testimonials.length]);
+  }, [testimonials.length, isMobile]);
 
-  // Handle navigation
   const handleNext = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex + 1) % Math.ceil(testimonials.length / 2)
+    setCurrentIndex((prevIndex) =>
+      isMobile
+        ? (prevIndex + 1) % testimonials.length
+        : (prevIndex + 1) % Math.ceil(testimonials.length / 2)
     );
   };
 
   const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + Math.ceil(testimonials.length / 2)) %
-        Math.ceil(testimonials.length / 2)
+    setCurrentIndex((prevIndex) =>
+      isMobile
+        ? (prevIndex - 1 + testimonials.length) % testimonials.length
+        : (prevIndex - 1 + Math.ceil(testimonials.length / 2)) %
+          Math.ceil(testimonials.length / 2)
     );
   };
 
-  // Render stars based on rating
   const renderStars = (rating) => {
     return Array.from({ length: 5 }, (_, index) => (
       <FaStar
         key={index}
-        className={`w-5 h-5 ${
+        className={`w-4 sm:w-5 h-4 sm:h-5 ${
           index < rating ? 'text-yellow-400' : 'text-zinc-300'
         }`}
       />
     ));
   };
 
-  // Get the current pair of testimonials
-  const getCurrentPair = () => {
-    const startIndex = currentIndex * 2;
-    return [
-      testimonials[startIndex % testimonials.length],
-      testimonials[(startIndex + 1) % testimonials.length],
-    ];
+  const getCurrentTestimonials = () => {
+    if (isMobile) {
+      return [testimonials[currentIndex]];
+    } else {
+      const startIndex = currentIndex * 2;
+      return [
+        testimonials[startIndex % testimonials.length],
+        testimonials[(startIndex + 1) % testimonials.length],
+      ].filter(Boolean); // Filter out undefined in case of odd number
+    }
   };
 
-  const currentPair = getCurrentPair();
+  const currentTestimonials = getCurrentTestimonials();
 
   return (
-    <section className='bg-gradient-to-b from-white to-zinc-50 py-16'>
-      <div className='max-w-7xl mx-auto px-4 text-center'>
+    <section className='bg-gradient-to-b from-white to-zinc-50 py-12 sm:py-16'>
+      <div className='max-w-[95%] sm:max-w-7xl mx-auto px-4 sm:px-6 text-center'>
         {/* Header */}
         <Heading title='Success Stories' />
         <Paragraph
-          className={'mb-8'}
-          data={
-            'Hear from professionals who transformed their careers with us.'
-          }
+          className='mb-6 sm:mb-8'
+          data='Hear from professionals who transformed their careers with us.'
         />
+
         {/* Testimonial Carousel */}
-        <div className='relative flex items-center justify-center'>
-          <div className='flex gap-8 max-w-5xl mx-auto'>
-            {currentPair.map((testimonial) =>
-              testimonial ? (
+        <div className='relative'>
+          <div className='w-full overflow-hidden'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8'>
+              {currentTestimonials.map((testimonial) => (
                 <div
                   key={testimonial.id}
-                  className='bg-white rounded-xl p-8 shadow-lg border border-zinc-200 w-full transform transition-all duration-500 hover:shadow-xl hover:scale-105'
+                  className='bg-white rounded-xl p-6 sm:p-8 shadow-lg border border-zinc-200 transition-all duration-500 hover:shadow-xl hover:scale-105'
                   role='article'
                   aria-label={`Testimonial by ${testimonial.name}`}
                 >
-                  {/* Quote Icons */}
-                  <FaQuoteLeft className='text-zinc-400 w-8 h-8 mb-4' />
-                  <p className='text-lg text-zinc-700 mb-6 leading-relaxed italic'>
+                  <FaQuoteLeft className='text-zinc-400 w-6 sm:w-8 h-6 sm:h-8 mb-4 mx-auto' />
+                  <p className='text-base sm:text-lg text-zinc-700 mb-6 leading-relaxed italic'>
                     {testimonial.text}
                   </p>
-                  <FaQuoteRight className='text-zinc-400 w-8 h-8 mb-6' />
+                  <FaQuoteRight className='text-zinc-400 w-6 sm:w-8 h-6 sm:h-8 mb-6 mx-auto' />
 
-                  {/* User Info */}
                   <div className='flex items-center justify-center gap-4'>
                     <img
                       src={testimonial.avatar}
                       alt={testimonial.name}
-                      className='w-16 h-16 rounded-full object-cover border-2 border-zinc-200'
+                      className='w-12 sm:w-16 h-12 sm:h-16 rounded-full object-cover border-2 border-zinc-200'
                     />
                     <div>
-                      <h4 className='text-xl font-semibold text-zinc-900'>
+                      <h4 className='text-lg sm:text-xl font-semibold text-zinc-900'>
                         {testimonial.name}
                       </h4>
-                      <p className='text-sm text-zinc-600'>
+                      <p className='text-xs sm:text-sm text-zinc-600'>
                         {testimonial.role}
                       </p>
                       <div className='flex justify-center mt-2'>
@@ -234,41 +236,43 @@ const TestimonialComponent = () => {
                     </div>
                   </div>
                 </div>
-              ) : null
-            )}
+              ))}
+            </div>
           </div>
 
           {/* Navigation Arrows */}
           <button
             onClick={handlePrev}
-            className='absolute left-0 ml-4 p-2 bg-zinc-100 rounded-full hover:bg-zinc-200 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-zinc-400'
+            className='absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-2 bg-zinc-100 rounded-full hover:bg-zinc-200 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-zinc-400'
             aria-label='Previous testimonials'
           >
-            <FaArrowLeft className='w-6 h-6 text-zinc-800' />
+            <FaArrowLeft className='w-5 sm:w-6 h-5 sm:h-6 text-zinc-800' />
           </button>
           <button
             onClick={handleNext}
-            className='absolute right-0 mr-4 p-2 bg-zinc-100 rounded-full hover:bg-zinc-200 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-zinc-400'
+            className='absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2 bg-zinc-100 rounded-full hover:bg-zinc-200 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-zinc-400'
             aria-label='Next testimonials'
           >
-            <FaArrowRight className='w-6 h-6 text-zinc-800' />
+            <FaArrowRight className='w-5 sm:w-6 h-5 sm:h-6 text-zinc-800' />
           </button>
         </div>
 
         {/* Indicators */}
-        <div className='flex justify-center mt-6 gap-2'>
-          {Array.from({ length: Math.ceil(testimonials.length / 2) }).map(
-            (_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-3 h-3 rounded-full ${
-                  index === currentIndex ? 'bg-zinc-800' : 'bg-zinc-300'
-                } transition-colors duration-300`}
-                aria-label={`Go to testimonial pair ${index + 1}`}
-              />
-            )
-          )}
+        <div className='flex justify-center mt-6 sm:mt-8 gap-2'>
+          {Array.from({
+            length: isMobile
+              ? testimonials.length
+              : Math.ceil(testimonials.length / 2),
+          }).map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 sm:w-3 h-2 sm:h-3 rounded-full ${
+                index === currentIndex ? 'bg-zinc-800' : 'bg-zinc-300'
+              } transition-colors duration-300`}
+              aria-label={`Go to testimonial ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>

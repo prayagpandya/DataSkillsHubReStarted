@@ -17,7 +17,7 @@ const NavLink = ({ title, url, baseUrl = null }) => {
     <Link
       to={url}
       onClick={handleClick}
-      className={`font-open-sans text-sm px-4 py-2 rounded-md font-medium transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-zinc-500 ${
+      className={`font-open-sans text-sm px-4 py-2 rounded-md font-medium transition-all duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-zinc-500 w-full text-center ${
         isActive
           ? 'text-white bg-zinc-800'
           : 'text-zinc-900 hover:text-white hover:bg-zinc-800'

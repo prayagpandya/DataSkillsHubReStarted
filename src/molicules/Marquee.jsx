@@ -41,44 +41,41 @@ const Marquee = () => {
   };
 
   return (
-    <div className='relative bg-white py-12 overflow-hidden border-y border-gray-200'>
+    <div className='relative bg-white py-8 sm:py-12 md:py-16 overflow-hidden border-y border-gray-200'>
       {/* Heading */}
       <Heading
         title='Our Placement Partners'
-        className='text-center text-gray-800 font-poppins text-3xl md:text-4xl font-semibold mb-10 tracking-tight'
+        className='text-center text-gray-800 font-poppins text-2xl md:text-4xl font-semibold mb-8 sm:mb-10 md:mb-12 tracking-tight'
       />
 
       {/* Marquee Container */}
-      <div className='relative'>
-        {/* Gradient overlays for fade effect */}
-        <div className='absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10'></div>
-        <div className='absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10'></div>
+      <div className='relative px-4 sm:px-6 md:px-8'>
+        <div className='absolute inset-y-0 left-0 w-12 sm:w-16 md:w-24 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none'></div>
+        <div className='absolute inset-y-0 right-0 w-12 sm:w-16 md:w-24 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none'></div>
 
-        {/* Top Marquee (Left to Right) */}
         <div
           ref={topMarqueeRef}
-          className='flex animate-marquee whitespace-nowrap mb-8'
+          className='flex animate-marquee whitespace-nowrap mb-6 sm:mb-8 md:mb-10'
           onMouseEnter={() => handleMouseEnter(topMarqueeRef)}
           onMouseLeave={() => handleMouseLeave(topMarqueeRef)}
         >
           {[...placeholders, ...placeholders].map((placeholder, index) => (
             <div
               key={`top-${placeholder.id}-${index}`}
-              className='mx-6 flex-shrink-0 transition-all duration-300 hover:scale-105 hover:shadow-lg'
+              className='mx-3 sm:mx-4 md:mx-6 flex-shrink-0 transition-all duration-300 hover:scale-105 hover:shadow-lg'
             >
-              <div className='relative w-44 h-28 flex items-center justify-center backdrop-blur-sm rounded-md shadow-sm border-2 border-zinc-300'>
+              <div className='relative w-32 sm:w-36 md:w-44 h-20 sm:h-24 md:h-28 flex items-center justify-center backdrop-blur-sm rounded-md shadow-sm border-2 border-zinc-300'>
                 <img
                   src={placeholder.url}
                   alt={placeholder.alt}
                   aria-label={`Logo of ${placeholder.alt}`}
-                  className='w-36 h-20 object-contain rounded-sm mix-blend-multiply'
+                  className='w-24 sm:w-28 md:w-36 h-14 sm:h-16 md:h-20 object-contain rounded-sm mix-blend-multiply'
                 />
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom Marquee (Right to Left) */}
         <div
           ref={bottomMarqueeRef}
           className='flex animate-marqueeReverse whitespace-nowrap'
@@ -88,14 +85,14 @@ const Marquee = () => {
           {[...placeholders, ...placeholders].map((placeholder, index) => (
             <div
               key={`bottom-${placeholder.id}-${index}`}
-              className='mx-6 flex-shrink-0 transition-all duration-300 hover:scale-105 hover:shadow-lg'
+              className='mx-3 sm:mx-4 md:mx-6 flex-shrink-0 transition-all duration-300 hover:scale-105 hover:shadow-lg'
             >
-              <div className='relative w-44 h-28 flex items-center justify-center backdrop-blur-sm rounded-md shadow-sm border-2 border-zinc-300'>
+              <div className='relative w-32 sm:w-36 md:w-44 h-20 sm:h-24 md:h-28 flex items-center justify-center backdrop-blur-sm rounded-md shadow-sm border-2 border-zinc-300'>
                 <img
                   src={placeholder.url}
                   alt={placeholder.alt}
                   aria-label={`Logo of ${placeholder.alt}`}
-                  className='w-36 h-20 object-contain rounded-sm mix-blend-multiply'
+                  className='w-24 sm:w-28 md:w-36 h-14 sm:h-16 md:h-20 object-contain rounded-sm mix-blend-multiply'
                 />
               </div>
             </div>
@@ -103,7 +100,7 @@ const Marquee = () => {
         </div>
       </div>
 
-      <style>{`
+      <style jsx>{`
         @keyframes marquee {
           0% {
             transform: translateX(0);
@@ -121,10 +118,16 @@ const Marquee = () => {
           }
         }
         .animate-marquee {
-          animation: marquee 15s linear infinite;
+          animation: marquee 20s linear infinite;
         }
         .animate-marqueeReverse {
-          animation: marqueeReverse 15s linear infinite;
+          animation: marqueeReverse 20s linear infinite;
+        }
+        @media (max-width: 640px) {
+          .animate-marquee,
+          .animate-marqueeReverse {
+            animation-duration: 15s;
+          }
         }
       `}</style>
     </div>
