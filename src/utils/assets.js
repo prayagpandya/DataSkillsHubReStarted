@@ -37,6 +37,7 @@ import aboutBg from '../assets/Images/bg.webp';
 import course1BusinessAnalytics from '../assets/Images/businessAnalyst.webp';
 import canada from '../assets/Images/canada.webp';
 import course1 from '../assets/Images/Course1.webp';
+import heroImageCommon from '../assets/Images/DeWatermark.ai_1742471836975.webp';
 import DigitalMarketing from '../assets/Images/DigitalMarketing.webp';
 import logo from '../assets/Images/dsh lgo.png';
 import GenAi from '../assets/Images/GenAi.webp';
@@ -57,6 +58,7 @@ export const assets = {
   logo,
   aboutBg,
   courseDetailedImg,
+  heroImageCommon,
   homeHeroVideo,
   upskillService,
   course1,

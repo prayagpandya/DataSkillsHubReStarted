@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
+import FileUploadInput from '../atoms/ButtonsAndLinks/FileInput';
+
 const Modal = ({ isOpen, onClose, source, context, isJobPage = false }) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -257,64 +259,38 @@ const Modal = ({ isOpen, onClose, source, context, isJobPage = false }) => {
               </p>
             )}
           </div>
-          <div>
-            <label
-              className='block text-sm font-medium text-zinc-700 mb-1'
-              htmlFor='message'
-            >
-              Message
-            </label>
-            <textarea
-              id='message'
-              name='message'
-              value={formData.message}
-              onChange={handleChange}
-              className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-200 ${
-                errors.message
-                  ? 'border-red-500 focus:ring-red-500'
-                  : 'border-zinc-300 focus:ring-yellow-400'
-              }`}
-              placeholder='Enter your message'
-              rows={source === 'Applying for Job' ? '3' : '4'} // Reduce rows for JobCard
-            />
-            {errors.message && (
-              <p id='message-error' className='text-red-500 text-xs mt-1'>
-                {errors.message}
-              </p>
-            )}
-          </div>
+          {isJobPage == false && (
+            <div>
+              <label
+                className='block text-sm font-medium text-zinc-700 mb-1'
+                htmlFor='message'
+              >
+                Message
+              </label>
+              <textarea
+                id='message'
+                name='message'
+                value={formData.message}
+                onChange={handleChange}
+                className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-200 ${
+                  errors.message
+                    ? 'border-red-500 focus:ring-red-500'
+                    : 'border-zinc-300 focus:ring-yellow-400'
+                }`}
+                placeholder='Enter your message'
+                rows={source === 'Applying for Job' ? '3' : '4'} // Reduce rows for JobCard
+              />
+              {errors.message && (
+                <p id='message-error' className='text-red-500 text-xs mt-1'>
+                  {errors.message}
+                </p>
+              )}
+            </div>
+          )}
 
           {isJobPage && (
             <>
-              <div>
-                <label
-                  className='block text-sm font-medium text-zinc-700 mb-1'
-                  htmlFor='resume'
-                >
-                  Resume
-                </label>
-                <input
-                  type='file'
-                  id='resume'
-                  name='resume'
-                  onChange={handleChange}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-200 ${
-                    errors.resume
-                      ? 'border-red-500 focus:ring-red-500'
-                      : 'border-zinc-300 focus:ring-yellow-400'
-                  }`}
-                  accept='.pdf,.doc,.docx'
-                  required
-                  aria-invalid={errors.resume ? 'true' : 'false'}
-                  aria-describedby={errors.resume ? 'resume-error' : undefined}
-                />
-                {errors.resume && (
-                  <p id='resume-error' className='text-red-500 text-xs mt-1'>
-                    {errors.resume}
-                  </p>
-                )}
-              </div>
-
+              <FileUploadInput errors={errors} handleChange={handleChange} />
               <div>
                 <label
                   className='block text-sm font-medium text-zinc-700 mb-1'

@@ -9,7 +9,7 @@ import { assets } from '../utils/assets';
 
 const Hero = () => {
   return (
-    <div className='relative w-screen min-h-[70vh] sm:min-h-screen flex items-center justify-center overflow-hidden'>
+    <div className='relative w-full min-h-[70vh] sm:min-h-screen flex items-center justify-center overflow-hidden'>
       {/* Video Background */}
       <video
         className='absolute top-0 left-0 w-full h-full object-cover'

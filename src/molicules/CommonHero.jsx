@@ -1,15 +1,17 @@
 import React from 'react';
 
+import { assets } from '../utils/assets';
+
 const CommonHero = ({ title, description }) => {
   return (
     <section
       className='jobs-hero bg-white text-center'
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')`,
+        backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(${assets.heroImageCommon})`,
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: 'top',
         backgroundBlendMode: 'multiply',
-        height: '30vh', // Compact yet effective
+        height: '60vh', // Compact yet effective
         display: 'flex',
         alignItems: 'center',
       }}

@@ -23,16 +23,16 @@ const ServiceSection = ({ isLeft = false, sectionData }) => {
     setModalSource('');
   };
   return (
-    <section className='py-12 md:py-6 font-open-sans '>
-      <div className='container mx-auto px-4 sm:px-6 lg:px-8'>
+    <section className='py-3 md:py-6 font-open-sans '>
+      <div className='md:max-w-7xl  md:mx-auto sm:px-6 lg:px-8'>
         <div
-          className={`flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12 transition-all duration-700 ease-in-out ${
+          className={`flex flex-col-reverse lg:flex-row items-center justify-between gap-4 lg:gap-12 transition-all duration-700 ease-in-out ${
             isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'
           } opacity-0 translate-y-10 animate-slide-in`}
         >
           {/* Text Content */}
           <div className='w-full lg:w-1/2 p-6 transition-all duration-500 hover:-translate-y-1 border border-gray-100/30'>
-            <h2 className='text-3xl md:text-4xl font-bold text-gray-900 mb-4 tracking-tight bg-clip-text  bg-gradient-to-r from-indigo-600 to-purple-600'>
+            <h2 className='text-3xl hidden lg:block md:text-4xl font-bold text-gray-900 mb-4 tracking-tight bg-clip-text  bg-gradient-to-r from-indigo-600 to-purple-600'>
               {title}
             </h2>
             <p className='text-gray-600 leading-relaxed text-base md:text-lg mb-6'>
@@ -48,6 +48,9 @@ const ServiceSection = ({ isLeft = false, sectionData }) => {
 
           {/* Video Section */}
           <div className='w-full lg:w-1/2 p-6 relative group'>
+            <h2 className='text-3xl md:text-4xl lg:hidden font-bold text-gray-900 mb-4 tracking-tight bg-clip-text  bg-gradient-to-r from-indigo-600 to-purple-600'>
+              {title}
+            </h2>
             <div className='relative w-full aspect-video rounded-2xl overflow-hidden bg-gray-200 shadow-lg border border-gray-100/30'>
               {videoUrl ? (
                 <>
