@@ -9,7 +9,7 @@ const CoursePageCards = () => {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         {/* Section Heading */}
         <h2 className='text-4xl font-extrabold text-gray-900 text-center mb-12 tracking-tight'>
-          Discover Our Top Courses
+          Discover Our 100% Job-Guaranteed Courses
         </h2>
 
         {/* Grid Layout for Cards */}

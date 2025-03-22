@@ -82,7 +82,7 @@ const FooterComponent = () => {
               <li className='flex items-center gap-3'>
                 <Briefcase className='text-zinc-400 w-5 h-5' />
                 <Link
-                  to='/services'
+                  to='/service'
                   className='text-zinc-300 text-base hover:text-zinc-100 hover:underline transition-all duration-300'
                   aria-label='Explore our services'
                 >
@@ -92,11 +92,21 @@ const FooterComponent = () => {
               <li className='flex items-center gap-3'>
                 <BookOpen className='text-zinc-400 w-5 h-5' />
                 <Link
-                  to='/blogs'
+                  to='/jobs'
                   className='text-zinc-300 text-base hover:text-zinc-100 hover:underline transition-all duration-300'
                   aria-label='Read our blogs'
                 >
-                  Blogs
+                  Jobs
+                </Link>
+              </li>
+              <li className='flex items-center gap-3'>
+                <BookOpen className='text-zinc-400 w-5 h-5' />
+                <Link
+                  to='/courses'
+                  className='text-zinc-300 text-base hover:text-zinc-100 hover:underline transition-all duration-300'
+                  aria-label='Read our blogs'
+                >
+                  Course
                 </Link>
               </li>
               <li className='flex items-center gap-3'>
