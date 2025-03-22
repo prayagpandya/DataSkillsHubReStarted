@@ -84,7 +84,7 @@ const CourseDetailedHero = ({
         </div>
 
         {/* Right Side: Image */}
-        <div className='flex-1 mt-20'>
+        <div className='flex-1 md:mt-20'>
           <img
             src={imageUrl}
             alt={title}

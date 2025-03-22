@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import FileUploadInput from '../atoms/ButtonsAndLinks/FileInput';
+import MobileInput from '../atoms/ButtonsAndLinks/MobileInput'; // Adjust the import path as needed
+import { errorToast, successToast } from '../molicules/ToastMessages';
 
 const Modal = ({ isOpen, onClose, source, context, isJobPage = false }) => {
   const [formData, setFormData] = useState({
@@ -49,8 +51,9 @@ const Modal = ({ isOpen, onClose, source, context, isJobPage = false }) => {
     }
     if (!formData.mobile.trim()) {
       newErrors.mobile = 'Mobile number is required';
-    } else if (!/^\d{10}$/.test(formData.mobile)) {
-      newErrors.mobile = 'Mobile number must be 10 digits';
+    } else if (!/^\+\d{1,4}\d{6,}$/.test(formData.mobile)) {
+      // Updated regex to account for country code + number
+      newErrors.mobile = 'Mobile number must include country code and be valid';
     }
     if (isJobPage) {
       if (!formData.resume) newErrors.resume = 'Resume is required';
@@ -81,8 +84,10 @@ const Modal = ({ isOpen, onClose, source, context, isJobPage = false }) => {
         resume: null,
         coverLetter: '',
       });
+      successToast('Form submitted successfully');
     } catch (error) {
       console.error('Form submission failed:', error);
+      errorToast('Form submission failed');
     } finally {
       setIsSubmitting(false);
     }
@@ -118,8 +123,6 @@ const Modal = ({ isOpen, onClose, source, context, isJobPage = false }) => {
         >
           ✕
         </button>
-
-        {/* Modal Header */}
         <h2 id='modal-title' className='text-2xl font-bold text-zinc-800 mb-2'>
           {source === 'Booking' &&
             `Book a Demo${context ? ` - ${context}` : ''}`}
@@ -230,36 +233,14 @@ const Modal = ({ isOpen, onClose, source, context, isJobPage = false }) => {
             )}
           </div>
 
-          <div>
-            <label
-              className='block text-sm font-medium text-zinc-700 mb-1'
-              htmlFor='mobile'
-            >
-              Mobile
-            </label>
-            <input
-              type='tel'
-              id='mobile'
-              name='mobile'
-              value={formData.mobile}
-              onChange={handleChange}
-              className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 transition-all duration-200 ${
-                errors.mobile
-                  ? 'border-red-500 focus:ring-red-500'
-                  : 'border-zinc-300 focus:ring-yellow-400'
-              }`}
-              placeholder='Enter your mobile number'
-              required
-              aria-invalid={errors.mobile ? 'true' : 'false'}
-              aria-describedby={errors.mobile ? 'mobile-error' : undefined}
-            />
-            {errors.mobile && (
-              <p id='mobile-error' className='text-red-500 text-xs mt-1'>
-                {errors.mobile}
-              </p>
-            )}
-          </div>
-          {isJobPage == false && (
+          {/* Replace mobile input with MobileInput component */}
+          <MobileInput
+            formData={formData}
+            handleChange={handleChange}
+            errors={errors}
+          />
+
+          {isJobPage === false && (
             <div>
               <label
                 className='block text-sm font-medium text-zinc-700 mb-1'
@@ -278,7 +259,7 @@ const Modal = ({ isOpen, onClose, source, context, isJobPage = false }) => {
                     : 'border-zinc-300 focus:ring-yellow-400'
                 }`}
                 placeholder='Enter your message'
-                rows={source === 'Applying for Job' ? '3' : '4'} // Reduce rows for JobCard
+                rows={source === 'Applying for Job' ? '3' : '4'}
               />
               {errors.message && (
                 <p id='message-error' className='text-red-500 text-xs mt-1'>
@@ -309,7 +290,7 @@ const Modal = ({ isOpen, onClose, source, context, isJobPage = false }) => {
                       : 'border-zinc-300 focus:ring-yellow-400'
                   }`}
                   placeholder='Enter your cover letter'
-                  rows={source === 'Applying for Job' ? '3' : '4'} // Reduce rows for JobCard
+                  rows={source === 'Applying for Job' ? '3' : '4'}
                   required
                   aria-invalid={errors.coverLetter ? 'true' : 'false'}
                   aria-describedby={

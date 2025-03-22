@@ -6,11 +6,11 @@ import { assets } from '../utils/assets';
 
 const Home4Section = () => {
   return (
-    <div className='max-w-7xl mx-10'>
+    <div className='max-w-7xl mx-4 md:mx-10'>
       <Heading
         title={'Empower Dreams and Secure Jobs in US & Canada Guaranteed!'}
       />
-      <div className='flex flex-col lg:flex-row max-w-7xl mx-auto gap-6'>
+      <div className='flex flex-col lg:flex-row  gap-6'>
         <video
           className='lg:w-1/2'
           loop

@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import React, { useEffect } from 'react';
 
+import PopularBlogDetailPage from './organisms/PopularBlogsDetails';
 import About from './pages/About';
 import AboutUs from './pages/About';
 import CourseDetailedPage from './pages/CourseDetailedPage';
@@ -38,6 +39,7 @@ const App = () => {
           <Route path='/about' element={<AboutUs />} />
           <Route path='/service' element={<Service />} />
           <Route path='/jobs' element={<Jobs />} />
+          <Route path='/blogs/:id' element={<PopularBlogDetailPage />} />
           <Route path='/jobs/:id' element={<JobInfoPage />} />
           <Route path='/courses/:courseName' element={<CourseDetailedPage />} />
         </Route>

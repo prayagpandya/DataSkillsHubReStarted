@@ -1,8 +1,10 @@
+/* eslint-disable no-unused-vars */
+// JobCard.jsx
 import { Clock, LaptopMinimalCheck, MapPin } from 'lucide-react';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import Modal from '../organisms/Modal'; // Adjust the import path as needed
+import Modal from '../organisms/Modal';
 
 const JobCard = ({ job }) => {
   const navigate = useNavigate();
@@ -13,21 +15,17 @@ const JobCard = ({ job }) => {
     location = 'Unknown Location',
     experience = 'N/A',
     jobType = 'N/A',
-    logo = 'https://via.placeholder.com/40x40', // Default fallback
-    id, // Ensure the job ID is available for navigation
+    salary = 'N/A',
+    logo = 'https://via.placeholder.com/40x40',
+    id,
   } = job || {};
 
-  const [imageSrc, setImageSrc] = useState(logo); // Manage image source with state
-  const fallbackImage = 'https://via.placeholder.com/40x40'; // Define fallback explicitly
-
-  // Modal state
+  const [imageSrc, setImageSrc] = useState(logo);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalSource, setModalSource] = useState('');
 
   const handleImageError = (e) => {
-    if (e.target.src !== fallbackImage) {
-      setImageSrc(fallbackImage);
-    }
+    setImageSrc('https://via.placeholder.com/40x40');
   };
 
   const openModal = (source) => {
@@ -40,68 +38,67 @@ const JobCard = ({ job }) => {
     setModalSource('');
   };
 
+  const handleDetailsClick = () => {
+    if (!id) {
+      console.error('Job ID is undefined. Cannot navigate.');
+      return;
+    }
+    navigate(`/jobs/${id}`);
+  };
+
   return (
-    <div className='job-card bg-white p-6 rounded-xl shadow-md w-full mx-4 my-4 hover:shadow-xl transition-all duration-300'>
+    <div className='bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 flex flex-col'>
       <div className='flex items-center mb-4'>
         <img
           src={imageSrc}
           alt={`${company} logo`}
-          className='w-12 h-12 rounded-full mr-3 object-cover'
+          className='w-12 h-12 rounded-full mr-3 object-cover border border-gray-200'
           onError={handleImageError}
         />
-        <div>
-          <h3 className='text-lg font-semibold text-gray-800'>{title}</h3>
+        <div className='flex-1'>
+          <h3 className='text-lg font-semibold text-gray-800 line-clamp-1'>
+            {title}
+          </h3>
           <p className='text-gray-500 text-sm'>
-            {company} | Posted: {date}
+            {company} • {date}
           </p>
         </div>
       </div>
 
-      <div className='space-y-2 text-sm'>
-        <p className='flex items-center'>
-          <span className='mr-1 scale-75'>
-            <MapPin />
-          </span>{' '}
-          {location}
+      <div className='space-y-2 text-sm text-gray-600 flex-1'>
+        <p className='flex items-center gap-2'>
+          <MapPin className='w-4 h-4' /> {location}
         </p>
-        <p className='text-gray-600 flex items-center'>
-          <span className='scale-75'>
-            <Clock />
-          </span>
-          Experience: {experience}
+        <p className='flex items-center gap-2'>
+          <Clock className='w-4 h-4' /> {experience}
         </p>
-        <p className='text-gray-600 flex items-center'>
-          <span className='scale-75'>
-            <LaptopMinimalCheck className='text-lg' />
-          </span>
-          JobType: {jobType}
+        <p className='flex items-center gap-2'>
+          <LaptopMinimalCheck className='w-4 h-4' /> {jobType}
         </p>
+        <p className='text-gray-700 font-medium'>{salary}</p>
       </div>
 
-      <div className='flex justify-between items-center mt-6'>
+      <div className='mt-6 flex gap-3'>
         <button
           onClick={() => openModal('Applying for Job')}
-          className='px-4 py-2 bg-zinc-900 text-zinc-200 font-semibold rounded-md hover:bg-zinc-700 transition-colors duration-200'
-          aria-label={`Quick apply for ${title} at ${company}`}
+          className='flex-1 px-4 py-2 bg-zinc-800 text-white rounded-md hover:bg-zinc-700 transition-colors duration-200 text-sm font-medium'
         >
           Quick Apply
         </button>
         <button
-          onClick={() => navigate(`/jobs/${id}`)}
-          className='px-4 py-2 border border-zinc-200 text-zinc-800 bg-transparent rounded-md hover:bg-zinc-100 transition-colors duration-200'
-          aria-label={`View more details for ${title} at ${company}`}
+          onClick={handleDetailsClick}
+          className='flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 transition-colors duration-200 text-sm font-medium'
         >
-          More Details
+          Details
         </button>
       </div>
 
-      {/* Modal */}
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
         source={modalSource}
-        context={`${title} at ${company}`} // Pass the job title and company as context
-        isJobPage={true} // Enable job-specific fields (Resume, Cover Letter)
+        context={`${title} at ${company}`}
+        isJobPage={true}
       />
     </div>
   );

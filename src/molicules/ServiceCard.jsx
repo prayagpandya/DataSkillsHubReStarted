@@ -6,7 +6,6 @@ const ServiceCard = ({
   description,
   buttonText = 'Get Started',
   backgroundImage,
-  serviceLink = '#', // Default link, can be customized
 }) => {
   return (
     <div className='relative flex flex-col rounded-2xl border border-gray-200 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 bg-white min-h-[450px]'>
@@ -49,7 +48,7 @@ const ServiceCard = ({
               .toLowerCase()
               .replace(/ /g, '-')}`}
             className='inline-flex items-center justify-center w-full px-6 py-3 text-sm font-semibold tracking-wide text-white uppercase bg-gradient-to-r from-gray-800 to-gray-900 rounded-full hover:from-gray-700 hover:to-gray-800 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500'
-            to={serviceLink} // Use serviceLink for navigation
+            to={'/service'}
           >
             {buttonText}
           </Link>

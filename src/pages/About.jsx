@@ -7,6 +7,7 @@ import CommonHero from '../molicules/CommonHero';
 import CustomizedTimeline from '../molicules/Timeline';
 import ITCompanyTimeline from '../molicules/Timeline';
 import DataSkillsHubTimeline from '../molicules/Timeline';
+import DataSkillsHubTimelineMobile from '../molicules/TimeLineMobile';
 import { assets } from '../utils/assets';
 
 const AboutUs = () => {
@@ -105,7 +106,13 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <DataSkillsHubTimeline />
+
+      <div className='hidden md:block'>
+        <DataSkillsHubTimeline />
+      </div>
+      <div className='md:hidden'>
+        <DataSkillsHubTimelineMobile />
+      </div>
     </div>
   );
 };

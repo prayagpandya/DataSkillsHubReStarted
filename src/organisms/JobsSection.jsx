@@ -34,7 +34,7 @@ const JobsSection = () => {
   const handleFilterChange = (filters) => {
     const filteredJobs = initialJobs.filter((job) => {
       const matchesJobType =
-        filters.jobType === 'All' || job.type === filters.jobType;
+        filters.jobType === 'All' || job.jobType === filters.jobType;
       const matchesLocation =
         filters.location === 'All' || job.location === filters.location;
       const matchesRoles =
@@ -50,14 +50,18 @@ const JobsSection = () => {
   };
 
   return (
-    <section className='p-6 lg:p-10  min-h-screen max-w-7xl mx-auto'>
+    <section className='p-6 lg:p-10 min-h-screen max-w-7xl mx-auto'>
       <div className='flex flex-col lg:flex-row gap-8'>
-        <JobFilters onFilterChange={handleFilterChange} />
+        {/* Filter container: full width on mobile, fixed width and sticky on large screens */}
+        <div className='w-full lg:w-1/3 lg:sticky lg:top-20'>
+          <JobFilters onFilterChange={handleFilterChange} />
+        </div>
+        {/* Job cards container */}
         <div className='flex-1'>
           {jobs.length > 0 ? (
-            <div className='grid grid-cols-1 sm:grid-cols-2  gap-6'>
-              {jobs.map((job, index) => (
-                <JobCard key={index} job={job} />
+            <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6'>
+              {jobs.map((job) => (
+                <JobCard key={job.id} job={job} />
               ))}
             </div>
           ) : (
