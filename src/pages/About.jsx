@@ -5,10 +5,6 @@ import { FaUserCircle, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import Heading from '../atoms/TypoGraphy/Heading';
 import CommonHero from '../molicules/CommonHero';
 import CustomizedTimeline from '../molicules/Timeline';
-<<<<<<< HEAD
-=======
-import ITCompanyTimeline from '../molicules/Timeline';
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
 import DataSkillsHubTimeline from '../molicules/Timeline';
 import DataSkillsHubTimelineMobile from '../molicules/TimeLineMobile';
 import { assets } from '../utils/assets';
@@ -16,18 +12,10 @@ import { assets } from '../utils/assets';
 const AboutUs = () => {
   return (
     <div className='scroll-smooth  text-zinc-800  min-h-screen'>
-<<<<<<< HEAD
-=======
-      {/* Hero Section */}
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
       <CommonHero
         title={'Welcome to Data Skills Hub'}
         description={'Your Bridge to IT Excellence and Opportunities'}
       />
-<<<<<<< HEAD
-=======
-      {/* About Ricky Export */}
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
       <div id='about' className='max-w-7xl mx-auto px-4 py-16 -mt-10'>
         <Heading title={'About Us'} pos={'center'} />
         <div className='flex flex-col md:flex-row justify-around gap-8 items-center'>
@@ -72,11 +60,6 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-=======
-
-      {/* Mission, Vision, Purpose */}
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
       <div className='max-w-7xl mx-auto px-4 py-16 -mt-16'>
         <div className='flex flex-col md:flex-row gap-8 justify-around'>
           <div className='flex-1 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300'>
@@ -84,31 +67,19 @@ const AboutUs = () => {
             <h2 className='text-2xl font-semibold text-zinc-800 text-center mb-2'>
               Our Vision
             </h2>
-<<<<<<< HEAD
             <p className='text-sm md:text-base text-zinc-800 '>
-=======
-            <p className='text-sm md:text-base text-zinc-800 text-justify'>
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
               To be a global leader in IT upskilling and staffing, bridging the
               gap between talent and opportunity with innovation and excellence,
               enabling individuals and businesses to thrive in a tech-driven
               world.
             </p>
           </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
           <div className='flex-1 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300'>
             <FaUserCircle className='text-6xl text-zinc-800 mx-auto mb-4' />
             <h2 className='text-2xl font-semibold text-zinc-800 text-center mb-2'>
               Our Mission
             </h2>
-<<<<<<< HEAD
             <p className='text-sm md:text-base text-zinc-800 '>
-=======
-            <p className='text-sm md:text-base text-zinc-800 text-justify'>
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
               At Data Skills Hub, we empower professionals through cutting-edge
               IT upskilling programs and strategic staffing. We connect talent
               with opportunities, fostering career growth and business success
@@ -121,11 +92,7 @@ const AboutUs = () => {
             <h2 className='text-2xl font-semibold text-zinc-800 text-center mb-2'>
               Our Values
             </h2>
-<<<<<<< HEAD
             <p className='text-sm md:text-base text-zinc-800 '>
-=======
-            <p className='text-sm md:text-base text-zinc-800 text-justify'>
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
               We stand for excellence, innovation, and empowerment. Our approach
               integrates integrity, collaboration, and inclusivity to build a
               transparent, diverse, and future-ready tech community.
@@ -144,10 +111,6 @@ const AboutUs = () => {
   );
 };
 
-<<<<<<< HEAD
-=======
-// Custom animation for fade-in effect
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
 const styles = `
   @keyframes fadeIn {
     from { opacity: 0; }
