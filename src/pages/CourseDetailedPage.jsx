@@ -54,7 +54,10 @@ const CourseDetailedPage = () => {
         title={selectedCourse.courseName}
         subtitle={selectedCourse.description}
         imageUrl={selectedCourse.imageUrl}
+<<<<<<< HEAD
         brochureUrl={selectedCourse.brochureUrl}
+=======
+>>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
         startDate='29 December 2024'
         duration='3 Months'
         language='English'
