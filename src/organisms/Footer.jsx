@@ -27,11 +27,7 @@ const FooterComponent = () => {
             </p>
             <div className='flex gap-4'>
               <a
-<<<<<<< HEAD
                 href='https://www.facebook.com/profile.php?id=61558433937480'
-=======
-                href='https://facebook.com'
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
                 target='_blank'
                 rel='noopener noreferrer'
                 className='text-zinc-400 hover:text-zinc-100 hover:scale-110 transition-all duration-300'
@@ -49,11 +45,7 @@ const FooterComponent = () => {
                 <FaTwitter className='w-6 h-6' />
               </a>
               <a
-<<<<<<< HEAD
                 href='https://www.instagram.com/dataskillshub/'
-=======
-                href='https://instagram.com'
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
                 target='_blank'
                 rel='noopener noreferrer'
                 className='text-zinc-400 hover:text-zinc-100 hover:scale-110 transition-all duration-300'
@@ -62,11 +54,7 @@ const FooterComponent = () => {
                 <FaInstagram className='w-6 h-6' />
               </a>
               <a
-<<<<<<< HEAD
                 href='https://www.linkedin.com/company/data-skills-hub/'
-=======
-                href='https://linkedin.com'
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
                 target='_blank'
                 rel='noopener noreferrer'
                 className='text-zinc-400 hover:text-zinc-100 hover:scale-110 transition-all duration-300'
@@ -118,7 +106,6 @@ const FooterComponent = () => {
                   className='text-zinc-300 text-base hover:text-zinc-100 hover:underline transition-all duration-300'
                   aria-label='Read our blogs'
                 >
-<<<<<<< HEAD
                   Courses
                 </Link>
               </li>
@@ -126,25 +113,12 @@ const FooterComponent = () => {
                 <Mail className='text-zinc-400 w-5 h-5' />
                 <Link
                   to='/contacts'
-=======
-                  Course
-                </Link>
-              </li>
-              <li className='flex items-center gap-3'>
-                <Mail className='text-zinc-400 w-5 h-5' />
-                <Link
-                  to='/contact'
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
                   className='text-zinc-300 text-base hover:text-zinc-100 hover:underline transition-all duration-300'
                   aria-label='Contact us'
                 >
                   Contact
                 </Link>
-<<<<<<< HEAD
               </li> */}
-=======
-              </li>
->>>>>>> 5fc7e2743e67c20921242aff1ad42a9715a1db31
             </ul>
           </div>
 
