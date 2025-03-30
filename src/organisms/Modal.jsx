@@ -22,6 +22,8 @@ const Modal = ({
     message: '',
     resume: null,
     coverLetter: '',
+    source: '',
+    context: '',
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -82,7 +84,8 @@ const Modal = ({
     try {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       console.log('Form submitted:', { source, context, ...formData });
-
+      formData.source = source;
+      formData.context = context;
       // Download the brochure after successful form submission
       if (source.startsWith('Downloading Brochure')) {
         const link = document.createElement('a');
@@ -166,6 +169,7 @@ const Modal = ({
             `You're applying for ${context}. Please submit your details and documents below.`}
         </p>
         <form
+          encType='multipart/form-data'
           onSubmit={handleSubmit}
           className={`space-y-${source === 'Applying for Job' ? '3' : '5'}`}
         >
